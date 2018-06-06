@@ -1,0 +1,32 @@
+@import '../variable.scss';
+.head-top {
+  background: $gray-bg;
+  overflow: hidden;
+  .container {
+    margin: 7px auto;
+    width: 1200px;
+    overflow: hidden;
+    .col {
+      color: $green;
+      display: inline-block;
+      margin: 0px 5px;
+    }
+    .con-left {
+      float: left;
+      font-size: 14px;
+      .welcome-pad {
+        display: inline-block;
+        margin: 0px 15px;
+      }
+      .show {
+        display: none;
+      }
+    }
+    .con-right {
+      float: right;
+      .cart {
+        padding: 0px 15px;
+      }
+    }
+  }
+}
