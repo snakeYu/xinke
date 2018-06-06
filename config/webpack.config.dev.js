@@ -111,7 +111,7 @@ module.exports = {
         loaders: [
           'style-loader',
           'css-loader',
-          // 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]',
+          //'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]',
           'sass-loader'
         ]
       },

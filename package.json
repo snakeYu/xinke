@@ -51,7 +51,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node scripts/start.js && json-server db.json --port 5000",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "server": "json-server db.json --port 5000"
@@ -99,6 +99,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "antd": "^3.6.1",
     "json-server": "^0.13.0",
     "node-sass": "^4.9.0",
     "react-app-rewired": "^1.5.2",

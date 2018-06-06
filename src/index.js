@@ -1,26 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-// import todoApp from './reducers';
-// import App from './components/App.js';
-import reducers from './reducers';
+import store from './store';
 import App from './App';
-import thunk from 'redux-thunk';
+import 'antd/dist/antd.css';
 
-let store = createStore(reducers, applyMiddleware(thunk));
-// 监听数据发生变化
-// store.subscribe(() => console.log(store.getState()));
-
-render(
+ReactDOM.render(
   <Provider store={store}>
-    <div>
-      <App />
-    </div>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
-// //  +++++ 加入+++++
-// if (module.hot) {
-//   module.hot.accept();
-// }
