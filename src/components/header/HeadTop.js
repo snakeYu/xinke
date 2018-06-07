@@ -29,7 +29,7 @@ class HeadTop extends React.Component {
                     <span className="login col">登陆</span>
                   </Link>
                 </span>
-                <Link to="/login">
+                <Link to="/register">
                   <span className="register col">注册</span>
                 </Link>
               </span>
