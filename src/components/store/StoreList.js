@@ -1,12 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { asyncGetStore } from '../../actions';
+import badge from '../../image/badge.png';
+import stars from '../../image/stars.png';
+import star from '../../image/star.png';
+import { Link } from 'react-router-dom';
 class StoreList extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
   render() {
+    var arr = (ind, length) => {
+      var res = [];
+      for (var i = 0; i < length; i++) {
+        if (i <= ind) {
+          res.push(<img src={star} alt="亮星" />);
+        } else {
+          res.push(<img src={stars} alt="暗星" />);
+        }
+      }
+      return res;
+    };
     return (
       <div className="StoreList">
         <div className="container">
@@ -15,14 +30,18 @@ class StoreList extends React.Component {
               return (
                 <li key={item.id}>
                   <div className="list-img">
-                    <div className="image">{/* <img src={item.img} /> */}</div>
-                    <div className="star" />
+                    <div className="image">
+                      <img src={item.img} alt={item.name} />
+                    </div>
+                    <div className="star">
+                      <img src={badge} alt="徽章" />
+                    </div>
                   </div>
                   <div className="list-con">
                     <div className="title">{item.name}</div>
                     <div className="star">
                       <span>荣誉</span>
-                      <span />
+                      <span>{arr(item.star, 5)}</span>
                     </div>
                     <div className="address">{item.address}</div>
                     <div className="server">
@@ -35,7 +54,9 @@ class StoreList extends React.Component {
                         return <span key={index}>{ele}</span>;
                       })}
                     </div>
-                    <div className="btn">进入店铺</div>
+                    <Link to={'/home?id=' + item.id}>
+                      <div className="btn">进入店铺</div>
+                    </Link>
                   </div>
                 </li>
               );

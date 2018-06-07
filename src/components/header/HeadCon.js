@@ -1,6 +1,8 @@
 import React from 'react';
 import { Input } from 'antd';
 import { Link } from 'react-router-dom';
+import phone from '../../image/phone.png';
+import logo from '../../image/logo.png';
 class HeadCon extends React.Component {
   constructor() {
     super();
@@ -17,7 +19,9 @@ class HeadCon extends React.Component {
     return (
       <div className="headerCon">
         <div className="container">
-          <div className="image list" />
+          <div className="image list">
+            <img src={logo} alt="logo" />
+          </div>
           <div className="sel list">
             <Search
               placeholder="搜索您需要的服务或服务商"
@@ -36,7 +40,9 @@ class HeadCon extends React.Component {
             </p>
           </div>
           <div className="phone list">
-            <span className="image" />
+            <span className="image">
+              <img src={phone} alt="手机" />
+            </span>
             <span>010-53380229</span>
           </div>
         </div>
