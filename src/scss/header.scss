@@ -30,3 +30,67 @@
     }
   }
 }
+.head-list {
+  border-bottom: 1px solid $green;
+  overflow: hidden;
+  ul {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0px auto;
+    li {
+      float: left;
+      list-style: none;
+      margin: 0px 40px;
+      font-size: 16px;
+      color: black;
+      padding: 5px 0;
+    }
+    .hid {
+      border-bottom: 3px solid $green;
+    }
+    li:hover {
+      border-bottom: 3px solid $green;
+    }
+  }
+}
+.headerCon {
+  overflow: hidden;
+  .container {
+    overflow: hidden;
+    width: 1200px;
+    margin: 20px auto;
+    .list {
+      float: left;
+    }
+    .image {
+      width: 150px;
+      height: 63px;
+      border: 1px solid #ccc;
+    }
+    .sel {
+      margin-left: 160px;
+      width: 600px;
+      p {
+        margin-top: 5px;
+        span {
+          color: $gray;
+        }
+        span:hover {
+          color: $green;
+        }
+      }
+    }
+    .phone {
+      float: right;
+      span {
+        vertical-align: middle;
+      }
+      .image {
+        display: inline-table;
+        width: 28px;
+        height: 28px;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+}

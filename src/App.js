@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import StoreListPage from './view/StoreListPage';
-import Header from './view/Header';
+import Main from './view';
 class App extends React.Component {
   constructor() {
     super();
@@ -12,8 +12,9 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div className="app">
-          <Route path="/" component={Header} />
-          <Route path="/login" component={StoreListPage} exact />
+          <Route path="/" component={Main} exact />
+          <Route path="/home" component={Main} />
+          <Route path="/login" component={StoreListPage} />
           <Route path="/register" component={StoreListPage} />
         </div>
       </HashRouter>

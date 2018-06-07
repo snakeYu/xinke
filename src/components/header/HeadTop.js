@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../scss/header.scss';
 import { Link } from 'react-router-dom';
-
 class HeadTop extends React.Component {
   constructor() {
     super();

@@ -1,22 +1,27 @@
 import React from 'react';
 import HeadTop from '../components/header/HeadTop';
 import HeadList from '../components/header/HeadList';
+import HeadCon from '../components/header/HeadCon';
 
 import '../scss/header.scss';
+
 const username = '';
-class Header extends React.Component {
+class Main extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
   render() {
     return (
-      <header>
-        <HeadTop username={username} />
+      <div>
+        <header>
+          <HeadTop username={username} />
+          <HeadCon />
+        </header>
         <HeadList />
-      </header>
+      </div>
     );
   }
   componentDidMount() {}
 }
-export default Header;
+export default Main;
