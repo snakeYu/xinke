@@ -1,6 +1,8 @@
 import React from 'react';
 import { Cascader } from 'antd';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { asyncGetStore } from '../../actions';
 class Coverage extends React.Component {
   constructor() {
     super();
@@ -25,7 +27,9 @@ class Coverage extends React.Component {
     );
   }
   onChange(value) {
-    console.log(value);
+    const val = value.join(' ');
+    console.log(val);
+    this.props.getStore('?address=' + encodeURI(val) + '&_limit=6');
   }
   getAxios() {
     axios('/api/options').then(res => {
@@ -36,6 +40,22 @@ class Coverage extends React.Component {
   }
   componentWillMount() {
     this.getAxios();
+    console.log(this.props);
   }
 }
-export default Coverage;
+// 把state映射到app显示组件的内容上, 映射的属性名字就是传入ui组件的  props的属性名。
+function mapStateToProps(state) {
+  return { data: state.store };
+}
+// 映射方法到UI组件
+function mapDispatchToProps(dispatch) {
+  return {
+    getStore: condition => {
+      dispatch(asyncGetStore(condition));
+    }
+  };
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Coverage);

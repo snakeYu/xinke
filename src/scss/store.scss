@@ -73,10 +73,20 @@
         overflow: hidden;
         padding: 10px;
         .list-img {
+          overflow: hidden;
           width: 140px;
-          border: 1px solid #ccc;
           float: left;
-          margin: 0px 40px;
+          margin: 0px 20px 0px 0px;
+          img {
+            width: 139px;
+            height: 142px;
+          }
+          .star {
+            width: 17px;
+            height: 23px;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+          }
         }
         .list-con {
           padding-right: 30px;

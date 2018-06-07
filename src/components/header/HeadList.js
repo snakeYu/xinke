@@ -12,7 +12,7 @@ class HeaderList extends React.Component {
         {
           name: '全部产品',
           id: 0,
-          url: '/home/store',
+          url: '/home',
           show: true,
           component: StoreListPage
         },

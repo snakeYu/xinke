@@ -15,7 +15,7 @@ class StoreList extends React.Component {
               return (
                 <li key={item.id}>
                   <div className="list-img">
-                    <div className="image" />
+                    <div className="image">{/* <img src={item.img} /> */}</div>
                     <div className="star" />
                   </div>
                   <div className="list-con">
@@ -28,7 +28,7 @@ class StoreList extends React.Component {
                     <div className="server">
                       <span>累计服务客户数量：{item.userNum}</span>
                       <span>|</span>
-                      <span>好评率：{item.userNum}</span>
+                      <span>好评率：{item.praiseRate}</span>
                     </div>
                     <div className="make">
                       {item.mack.map((ele, index) => {
@@ -45,11 +45,9 @@ class StoreList extends React.Component {
       </div>
     );
   }
-  componentWillReceiveProps() {
-    console.log(this.props.data);
-  }
+  componentWillReceiveProps() {}
   componentWillMount() {
-    this.props.getStore();
+    this.props.getStore('?_page=1&_limit=6');
   }
 }
 // 把state映射到app显示组件的内容上, 映射的属性名字就是传入ui组件的  props的属性名。
@@ -59,8 +57,8 @@ function mapStateToProps(state) {
 // 映射方法到UI组件
 function mapDispatchToProps(dispatch) {
   return {
-    getStore: () => {
-      dispatch(asyncGetStore());
+    getStore: condition => {
+      dispatch(asyncGetStore(condition));
     }
   };
 }
