@@ -16,7 +16,7 @@ class Paging extends React.Component {
         <Pagination
           showQuickJumper
           defaultCurrent={1}
-          total={100}
+          total={50}
           onChange={node => {
             this.onChange(node);
           }}

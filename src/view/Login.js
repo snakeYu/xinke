@@ -1,7 +1,7 @@
 import React from 'react';
-import HeadTop from '../components/header/HeadTop';
+
 import '../scss/header.scss';
-const username = '';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -10,9 +10,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <HeadTop username={username} />
-        </header>
+        <p>登录</p>
       </div>
     );
   }

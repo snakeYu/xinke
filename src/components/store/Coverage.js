@@ -40,7 +40,6 @@ class Coverage extends React.Component {
   }
   componentWillMount() {
     this.getAxios();
-    console.log(this.props);
   }
 }
 // 把state映射到app显示组件的内容上, 映射的属性名字就是传入ui组件的  props的属性名。

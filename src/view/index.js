@@ -1,7 +1,8 @@
 import React from 'react';
 import HeadTop from '../components/header/HeadTop';
-import StoreListPage from './StoreListPage';
+
 import '../scss/header.scss';
+
 const username = '';
 class Main extends React.Component {
   constructor() {
@@ -14,7 +15,8 @@ class Main extends React.Component {
         <header>
           <HeadTop username={username} />
         </header>
-        <StoreListPage />
+
+        <footer />
       </div>
     );
   }

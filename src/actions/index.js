@@ -14,7 +14,6 @@ export function getStore(text) {
 }
 // 异步请求店铺信息
 export function asyncGetStore(condition) {
-  console.log(condition);
   return dispatch => {
     return axios('/api/store' + condition).then(res => {
       dispatch(getStore(res.data));

@@ -1,4 +1,5 @@
 @import '../variable.scss';
+// 地区
 #Coverage {
   overflow: hidden;
   .container {
@@ -19,6 +20,7 @@
     }
   }
 }
+// 过滤
 #StoreFilter {
   .container {
     width: $width;
@@ -51,6 +53,7 @@
     }
   }
 }
+// 店铺列表
 .StoreList {
   overflow: hidden;
   .container {
@@ -148,13 +151,66 @@
     }
   }
 }
+// 分页
 .pagination {
   position: relative;
+  height: 200px;
   .ant-pagination {
     float: left;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 200px;
+    margin: 50px 0px;
+  }
+}
+// 详情页
+.storeDetail {
+  width: $width;
+  margin: 10px auto;
+  overflow: hidden;
+  .detailTop {
+    overflow: hidden;
+    .image {
+      padding-right: 20px;
+      float: left;
+      img {
+        width: 480px;
+        height: 300px;
+      }
+    }
+    .con {
+      float: left;
+      .title {
+        font-size: 24px;
+      }
+      .price {
+        background: $gray-bg;
+        padding: 10px;
+        font-size: 12px;
+        .old {
+          overflow: hidden;
+          div {
+            float: left;
+          }
+          .thought {
+            display: inline-block;
+            text-decoration: line-through;
+          }
+        }
+        .new {
+          .col {
+            color: red;
+            font-size: 18px;
+          }
+          .tab {
+            background: red;
+            display: inline-block;
+            margin-left: 10px;
+            color: #fff;
+            padding: 0px 10px;
+          }
+        }
+      }
+    }
   }
 }

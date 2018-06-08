@@ -15,9 +15,9 @@ class StoreList extends React.Component {
       var res = [];
       for (var i = 0; i < length; i++) {
         if (i <= ind) {
-          res.push(<img src={star} alt="亮星" />);
+          res.push(<img src={star} alt="亮星" key={i}/>);
         } else {
-          res.push(<img src={stars} alt="暗星" />);
+          res.push(<img src={stars} alt="暗星" key={i}/>);
         }
       }
       return res;
@@ -54,7 +54,7 @@ class StoreList extends React.Component {
                         return <span key={index}>{ele}</span>;
                       })}
                     </div>
-                    <Link to={'/home?id=' + item.id}>
+                    <Link to={'/home/detail?id=' + item.id}>
                       <div className="btn">进入店铺</div>
                     </Link>
                   </div>
