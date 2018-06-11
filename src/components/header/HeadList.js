@@ -1,6 +1,7 @@
 import React from 'react';
 import StoreListPage from '../../view/StoreListPage';
 import StoreDetail from '../store/StoreDetail';
+import Sld from '../../view/sld';
 import { Link, Redirect, Route } from 'react-router-dom';
 class HeaderList extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ class HeaderList extends React.Component {
           id: 0,
           url: '/home/goods',
           show: true,
-          component: StoreListPage
+          component: Sld
         },
         {
           name: '财税服务',
