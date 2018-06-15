@@ -20,7 +20,16 @@ export default class Rewrite extends React.Component {
             </div>
             <div className="item">
               <button className="btnNum" >获取验证码</button>
+<<<<<<< HEAD
               <input type="text" id="phoneExec" className="phoneExec" placeholder="请输入验证码" />
+=======
+              <input
+                type="text"
+                id="phoneExec"
+                className="phoneExec"
+                placeholder="请输入验证码"
+              />
+>>>>>>> add
             </div>
             <div className="item">
               <input type="password" id="pwd" placeholder="请输入密码" />

@@ -13,15 +13,20 @@ import Footer from './components/footer/Footer'
 import Login from './components/login/Login'
 import Rewite from './components/rewrite/Rewrite'
 import Register from './components/register/Register'
+<<<<<<< HEAD
 import HeadCon from './components/header/HeadCon'
 
 const username = '';
+=======
+import Index from './components/index/index'
+>>>>>>> add
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
+<<<<<<< HEAD
     return (
       <HashRouter>
         <div className="app">
@@ -42,6 +47,22 @@ class App extends React.Component {
         </div>
       </HashRouter>)
 
+=======
+    return ( 
+    <HashRouter>
+      < div className = "app" >
+      < Route path = "/" component = {Header} /> 
+      < Route path = "/login" component = { StoreListPage} exact / >
+      < Route path = "/register" component = { StoreListPage } /> 
+      < Route path='/Loginx' component={Login} exact/>
+      < Route path='/rewrite' component={Rewite} exact/>
+      < Route path='/register' component={Register} exact/>
+      < Route path='/' component={Index}/>
+      < Footer/>
+      </ div> 
+    </ HashRouter >
+    );
+>>>>>>> add
   }
 
 }
