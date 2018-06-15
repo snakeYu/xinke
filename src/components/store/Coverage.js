@@ -2,7 +2,7 @@ import React from 'react';
 import { Cascader } from 'antd';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { asyncGetStore } from '../../actions';
+import { asyncGetStore, filtrate } from '../../actions';
 class Coverage extends React.Component {
   constructor() {
     super();
@@ -27,9 +27,8 @@ class Coverage extends React.Component {
     );
   }
   onChange(value) {
-    const val = value.join(' ');
-    console.log(val);
-    this.props.getStore('?address=' + encodeURI(val) + '&_limit=6');
+    //const val = value.join(' ');
+    this.props.getStore({ address: value[0], _limit: 6 });
   }
   getAxios() {
     axios('/api/options').then(res => {
@@ -51,6 +50,9 @@ function mapDispatchToProps(dispatch) {
   return {
     getStore: condition => {
       dispatch(asyncGetStore(condition));
+    },
+    filtrate: con => {
+      dispatch(filtrate(con));
     }
   };
 }

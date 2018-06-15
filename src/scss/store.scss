@@ -179,11 +179,14 @@
       }
     }
     .con {
+      font-size: 14px;
       float: left;
       .title {
+        margin-top: 5px;
         font-size: 24px;
       }
       .price {
+        margin-top: 5px;
         background: $gray-bg;
         padding: 10px;
         font-size: 12px;
@@ -210,6 +213,34 @@
             padding: 0px 10px;
           }
         }
+      }
+      .type {
+        margin-top: 5px;
+        span {
+          background: $green;
+          color: #fff;
+          display: inline-block;
+          padding: 3px 5px;
+          margin-right: 10px;
+        }
+      }
+      .addr,
+      .num {
+        margin-top: 10px;
+        span {
+          display: inline-block;
+          padding: 0px 10px;
+        }
+      }
+      .btn {
+        margin-top: 10px;
+        text-align: center;
+        line-height: 30px;
+        width: 100px;
+        height: 30px;
+        background: $green;
+        color: #fff;
+        cursor: pointer;
       }
     }
   }

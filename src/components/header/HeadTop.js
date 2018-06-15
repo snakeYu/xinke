@@ -1,12 +1,19 @@
 import React from 'react';
 import '../../scss/header.scss';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 class HeadTop extends React.Component {
   constructor() {
     super();
     this.state = {
-      num: 3
+      num: 0
     };
+  }
+  componentWillReceiveProps(props) {
+    this.setState({
+      num: props.catDate.length
+    });
   }
   render() {
     return (
@@ -28,7 +35,7 @@ class HeadTop extends React.Component {
               </span>
             </div>
             <div className="con-right">
-              <span className="cart">
+              <span className="cart" style={{ cursor: 'pointer' }}>
                 购物车<span className="col">{this.state.num}</span>件
               </span>
               <span className="col">服务商入口</span>
@@ -39,4 +46,8 @@ class HeadTop extends React.Component {
     );
   }
 }
-export default HeadTop;
+function mapStateToProps(state) {
+  return { catDate: state.cat };
+}
+
+export default connect(mapStateToProps)(HeadTop);

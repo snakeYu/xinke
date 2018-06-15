@@ -1,63 +1,30 @@
 import React from 'react';
-import StoreListPage from '../../view/StoreListPage';
+import { connect } from 'react-redux';
 import StoreDetail from '../store/StoreDetail';
-import Sld from '../../view/sld';
 import { Link, Redirect, Route } from 'react-router-dom';
+import { navlist } from '../../actions';
+
 class HeaderList extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      a: 123,
-      list: [
-        {
-          name: '全部产品',
-          id: 0,
-          url: '/home/goods',
-          show: true,
-          component: Sld
-        },
-        {
-          name: '财税服务',
-          id: 1,
-          url: '/home/server',
-          show: false
-        },
-        {
-          name: '公司工商',
-          id: 2,
-          url: '/home/gs',
-          show: false
-        },
-        { name: '社保缴纳', id: 3, url: '/home/social', show: false },
-        { name: '人事外包', id: 4, url: '/home/hr', show: false },
-        { name: '加盟我们', id: 5, url: '/home/joinUs', show: false },
-        {
-          name: '店铺',
-          id: 6,
-          url: '/home/store',
-          show: false,
-          component: StoreListPage
-        }
-      ]
-    };
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
   render() {
-    const state = this.state;
     return (
       <div className="center">
         <div className="head-list">
           <ul>
-            {state.list.map(item => {
+            {this.props.list.map(item => {
               return (
-                <Link
-                  to={item.url}
-                  key={item.id}
-                  onClick={() => {
-                    this.show();
-                    item.show = true;
-                  }}
-                >
-                  <li className={item.show ? 'hid' : ''}>{item.name}</li>
+                <Link to={item.url} key={item.id}>
+                  <li
+                    className={item.show ? 'hid' : ''}
+                    onClick={() => {
+                      this.props.navlist(item);
+                    }}
+                  >
+                    {item.name}
+                  </li>
                 </Link>
               );
             })}
@@ -70,7 +37,7 @@ class HeaderList extends React.Component {
             path="/home"
             render={() => <Redirect to="/home/goods" />}
           />
-          {state.list.map(item => {
+          {this.props.list.map(item => {
             return (
               <Route key={item.id} path={item.url} component={item.component} />
             );
@@ -79,10 +46,21 @@ class HeaderList extends React.Component {
       </div>
     );
   }
-  show() {
-    this.state.list.forEach(item => {
-      item.show = false;
-    });
-  }
+  componentWillReceiveProps(props) {}
+  componentWillMount() {}
 }
-export default HeaderList;
+function mapStateToProps(state) {
+  return { list: state.navlist };
+}
+// 映射方法到UI组件
+function mapDispatchToProps(dispatch) {
+  return {
+    navlist: condition => {
+      dispatch(navlist(condition));
+    }
+  };
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HeaderList);

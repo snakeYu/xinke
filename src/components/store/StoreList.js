@@ -15,9 +15,9 @@ class StoreList extends React.Component {
       var res = [];
       for (var i = 0; i < length; i++) {
         if (i <= ind) {
-          res.push(<img src={star} alt="亮星" key={i}/>);
+          res.push(<img src={star} alt="亮星" key={i} />);
         } else {
-          res.push(<img src={stars} alt="暗星" key={i}/>);
+          res.push(<img src={stars} alt="暗星" key={i} />);
         }
       }
       return res;
@@ -54,7 +54,12 @@ class StoreList extends React.Component {
                         return <span key={index}>{ele}</span>;
                       })}
                     </div>
-                    <Link to={'/home/detail?id=' + item.id}>
+                    <Link
+                      to={'/home/detail?id=' + item.id}
+                      onClick={() => {
+                        window.location.reload();
+                      }}
+                    >
                       <div className="btn">进入店铺</div>
                     </Link>
                   </div>
@@ -68,12 +73,14 @@ class StoreList extends React.Component {
   }
   componentWillReceiveProps() {}
   componentWillMount() {
-    this.props.getStore('?_page=1&_limit=6');
+    this.props.getStore({ _page: 1, _limit: 6 });
   }
 }
 // 把state映射到app显示组件的内容上, 映射的属性名字就是传入ui组件的  props的属性名。
 function mapStateToProps(state) {
-  return { data: state.store };
+  return {
+    data: state.store
+  };
 }
 // 映射方法到UI组件
 function mapDispatchToProps(dispatch) {
