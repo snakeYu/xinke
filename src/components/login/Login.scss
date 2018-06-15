@@ -44,7 +44,11 @@
       float: right;
       width: 88px;
       height: 100%;
-      background-color: #000;
+    }
+  
+    .testImg{
+      background: url('../../images/yzm.png') no-repeat;
+      background-size: contain;
     }
     .ty{
       text-align: center;
@@ -70,5 +74,20 @@
   .rBox {
     padding: 45px 265px 0 170px;
     font-size: 18px;
+    .img{
+      background-repeat: no-repeat;
+      height:200px;
+      width:150px;
+      background-size: contain;
+    }
+    .re{
+      background-image: url('../../images/login_img.png')
+    }
+    .ri{
+      background-image: url('../../images/register_imgpng.png');
+    }
+    .lo{
+      background-image: url('../../images//login_img.png');
+    }
   }
 }

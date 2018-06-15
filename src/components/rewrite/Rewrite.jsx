@@ -24,7 +24,7 @@ export default class Rewrite extends React.Component {
               />
             </div>
             <div className="item">
-              <div className="btnNum" />
+              <button className="btnNum" >获取验证码</button>
               <input
                 type="text"
                 id="phoneExec"
@@ -53,6 +53,9 @@ export default class Rewrite extends React.Component {
             <p>
               <Link to="/loginx">返回登录>></Link>
             </p>
+            <div className="img re">
+            
+            </div>
           </div>
         </div>
       </div>

@@ -21,7 +21,9 @@ export default class Login extends React.Component {
                 className="exec"
                 placeholder="请输入验证码"
               />
-              <div className="testImg" />
+              <div className="testImg" >
+               
+              </div>
             </div>
             <div className="item">
               <input type="password" id="pwd" placeholder="请输入密码" />
@@ -44,6 +46,9 @@ export default class Login extends React.Component {
             <p>
               <Link to="/register">立即注册>></Link>
             </p>
+            <div className="img lo">
+            
+            </div>
           </div>
         </div>
       </div>
