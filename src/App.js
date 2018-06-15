@@ -13,8 +13,7 @@ import Footer from './components/footer/Footer'
 import Login from './components/login/Login'
 import Rewite from './components/rewrite/Rewrite'
 import Register from './components/register/Register'
-import HeadCon from './components/header/HeadCon'
-import HeadList from './components/header/HeadList'
+
 
 const username = '';
 class App extends React.Component {
