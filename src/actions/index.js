@@ -1,32 +1,45 @@
 import axios from 'axios';
 export const action = {
-  ADD_TODO: ' ADD_TODO',
-  DEL_TODO: ' DEL_TODO',
-  ASYNS_DATE: ' ASYNS_DATE'
+  GET_STORE: 'GET_STORE',
+  FILT: 'FILT',
+  add: 'ADD_CAT',
+  listnav: 'NAV_LIST'
 };
-export function addTodo(text) {
+// navlist
+export function navlist(text) {
   return {
-    type: action.ADD_TODO,
+    type: action.listnav,
     text
   };
 }
-export function delTodo(text) {
+// 添加购物车
+export function addCat(text) {
   return {
-    type: action.DEL_TODO,
+    type: action.add,
     text
   };
 }
-
-export function aysDate(text) {
+// 获取店铺信息
+export function getStore(text) {
   return {
-    type: action.ASYNS_DATE,
+    type: action.GET_STORE,
     text
   };
 }
-export function asyncDelStu() {
+// 异步请求店铺信息
+export function asyncGetStore(condition) {
   return dispatch => {
-    return axios('/api/data').then(res => {
-      dispatch(aysDate(res.data));
+    return axios('/api/store', {
+      params: condition
+    }).then(res => {
+      dispatch(getStore(res.data));
     });
+  };
+}
+// 筛选
+export function filtrate(text) {
+  return {
+    type: action.FILT,
+    text
   };
 }

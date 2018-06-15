@@ -1,23 +1,35 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import StoreListPage from './view/StoreListPage';
-import Header from './view/Header';
+import HeadTop from './components/header/HeadTop';
+import { HashRouter, Route, Redirect } from 'react-router-dom';
+import Login from './view/Login';
+
+import Home from './view/Home';
+import Footer from './components/Footer';
+import './scss/header.scss';
+
+const username = '';
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
   render() {
     return (
       <HashRouter>
         <div className="app">
-          <Route path="/" component={Header} />
-          <Route path="/login" component={StoreListPage} exact />
-          <Route path="/register" component={StoreListPage} />
+          <header>
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
+            <HeadTop username={username} />
+          </header>
+          <Route path="/home" component={Home} />
+          <Route path="/login" component={Login} />
+          <footer>
+            <Footer />
+          </footer>
         </div>
       </HashRouter>
     );
   }
+  componentDidMount() {}
 }
 export default App;

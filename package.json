@@ -16,6 +16,7 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
+    "es6-shim": "^0.35.3",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
@@ -51,10 +52,10 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js && json-server db.json --port 5000",
+    "start": "node scripts/start.js  ",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "server": "json-server db.json --port 5000"
+    "server": "json-server db.js --port 5000"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -101,6 +102,7 @@
   "devDependencies": {
     "antd": "^3.6.1",
     "json-server": "^0.13.0",
+    "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.9.0",
     "react-app-rewired": "^1.5.2",
     "redux": "^4.0.0",
