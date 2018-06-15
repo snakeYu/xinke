@@ -1,0 +1,247 @@
+@import '../variable.scss';
+// 地区
+#Coverage {
+  overflow: hidden;
+  .container {
+    overflow: hidden;
+    width: $width;
+    margin: 22px auto;
+    background: $gray-bg;
+    border: 1px solid #ccc;
+    .server {
+      padding: 10px 10px;
+      float: left;
+      border-right: 1px solid #ccc;
+    }
+    .ant-cascader-picker {
+      width: 280px;
+      margin: 5px;
+      background: $gray-bg;
+    }
+  }
+}
+// 过滤
+#StoreFilter {
+  .container {
+    width: $width;
+    background: $gray-bg;
+    border: 1px solid #ccc;
+    margin: 0px auto;
+    span {
+      font-size: 14px;
+      display: inline-block;
+      padding: 8px 16px;
+      border-right: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .sel {
+      background: $green;
+      color: #fff;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border: 10px solid $green;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+// 店铺列表
+.StoreList {
+  overflow: hidden;
+  .container {
+    border: 1px solid #ccc;
+    border-top: none;
+    width: $width;
+    margin: 0px auto;
+    padding-top: 20px;
+    overflow: hidden;
+    ul {
+      padding: 10px;
+      padding-right: 0px;
+      margin: 0px;
+      overflow: hidden;
+      li {
+        width: 48%;
+        margin: 10px;
+        list-style: none;
+        color: black;
+        border: 1px solid #ccc;
+        float: left;
+        overflow: hidden;
+        padding: 10px;
+        .list-img {
+          overflow: hidden;
+          width: 140px;
+          float: left;
+          margin: 0px 20px 0px 0px;
+          img {
+            width: 139px;
+            height: 142px;
+          }
+          .star {
+            width: 17px;
+            height: 23px;
+            margin: 10px auto;
+            & img {
+              width: 17px;
+              height: 23px;
+            }
+          }
+        }
+        .list-con {
+          padding-right: 30px;
+          float: left;
+          .title {
+            font-size: 16px;
+            margin-bottom: 5px;
+          }
+          .star,
+          .address {
+            font-size: 12px;
+            color: #ccc;
+          }
+          .star {
+            span {
+              img {
+                display: inline-block;
+                padding: 2px;
+              }
+              display: inline-block;
+              padding-right: 3px;
+            }
+          }
+          .server {
+            font-size: 14px;
+            span {
+              display: inline-block;
+              margin: 10px 10px 10px 0px;
+            }
+          }
+          .make {
+            width: 200px;
+            span {
+              display: inline-block;
+              background: $green;
+              font-size: 12px;
+              margin: 2px 5px;
+              color: #fff;
+              padding: 0px 8px;
+              border-radius: 5px;
+            }
+          }
+          .btn {
+            font-size: 14px;
+            background: $btn-in;
+            color: #fff;
+            cursor: pointer;
+            float: left;
+            margin-top: 10px;
+            padding: 5px 15px;
+          }
+        }
+      }
+    }
+  }
+}
+// 分页
+.pagination {
+  position: relative;
+  height: 200px;
+  .ant-pagination {
+    float: left;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 50px 0px;
+  }
+}
+// 详情页
+.storeDetail {
+  width: $width;
+  margin: 10px auto;
+  overflow: hidden;
+  .detailTop {
+    overflow: hidden;
+    .image {
+      padding-right: 20px;
+      float: left;
+      img {
+        width: 480px;
+        height: 300px;
+      }
+    }
+    .con {
+      font-size: 14px;
+      float: left;
+      .title {
+        margin-top: 5px;
+        font-size: 24px;
+      }
+      .price {
+        margin-top: 5px;
+        background: $gray-bg;
+        padding: 10px;
+        font-size: 12px;
+        .old {
+          overflow: hidden;
+          div {
+            float: left;
+          }
+          .thought {
+            display: inline-block;
+            text-decoration: line-through;
+          }
+        }
+        .new {
+          .col {
+            color: red;
+            font-size: 18px;
+          }
+          .tab {
+            background: red;
+            display: inline-block;
+            margin-left: 10px;
+            color: #fff;
+            padding: 0px 10px;
+          }
+        }
+      }
+      .type {
+        margin-top: 5px;
+        span {
+          background: $green;
+          color: #fff;
+          display: inline-block;
+          padding: 3px 5px;
+          margin-right: 10px;
+        }
+      }
+      .addr,
+      .num {
+        margin-top: 10px;
+        span {
+          display: inline-block;
+          padding: 0px 10px;
+        }
+      }
+      .btn {
+        margin-top: 10px;
+        text-align: center;
+        line-height: 30px;
+        width: 100px;
+        height: 30px;
+        background: $green;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux';
-import todo from './todo';
+import condition from './condition';
+import store from './store';
+import cat from './cat';
+import navlist from './navlist';
 export default combineReducers({
-  todo
+  condition,
+  store,
+  cat,
+  navlist
 });

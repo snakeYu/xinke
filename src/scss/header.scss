@@ -1,5 +1,12 @@
 @import '../variable.scss';
+body,
+html {
+  height: 100%;
+}
 .head-top {
+  position: 'fixed';
+  top: 0px;
+  z-index: 1;
   background: $gray-bg;
   overflow: hidden;
   .container {
@@ -29,4 +36,79 @@
       }
     }
   }
+}
+.center {
+  .head-list {
+    border-bottom: 1px solid $green;
+    overflow: hidden;
+    ul {
+      width: 1200px;
+      overflow: hidden;
+      margin: 0px auto;
+      li {
+        float: left;
+        list-style: none;
+        margin: 0px 40px;
+        font-size: 16px;
+        color: black;
+        padding: 5px 0;
+      }
+      .hid {
+        border-bottom: 3px solid $green;
+      }
+      li:hover {
+        border-bottom: 3px solid $green;
+      }
+    }
+  }
+  .con {
+    min-height: 500px;
+  }
+}
+.headerCon {
+  overflow: hidden;
+  .container {
+    overflow: hidden;
+    width: 1200px;
+    margin: 20px auto;
+    .list {
+      float: left;
+    }
+    .image {
+      width: 150px;
+      height: 63px;
+    }
+    .sel {
+      margin-left: 160px;
+      width: 600px;
+      p {
+        margin-top: 5px;
+        span {
+          color: $gray;
+        }
+        span:hover {
+          color: $green;
+        }
+      }
+    }
+    .phone {
+      float: right;
+      span {
+        vertical-align: middle;
+      }
+      .image {
+        display: inline-table;
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+.footer {
+  width: 100%;
+  height: 40px;
+  background: black;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
 }
